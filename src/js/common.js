@@ -2,11 +2,7 @@
 
 $(function(){
 
-
-
-
-
-
+  $('#date').datetimepicker();
 
 
 
