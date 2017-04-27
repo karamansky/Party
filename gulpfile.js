@@ -61,15 +61,15 @@ gulp.task("clearCache", function(){
 
 //concat and minification js libs
 gulp.task("minJsLibs", function(){
-	del.sync("src/js/libs.min.js"); // удаляем старую сборку
-	return gulp.src([
-		//'src/libs/bootstrap-sass/assets/javascripts/bootstrap.min.js',
-		'src/libs/jquery/dist/jquery.min.js'])
-		// 'src/libs/owl-carousel/owl-carousel/owl.carousel.min.js',
-		// 'src/libs/magnific-popup/dist/jquery.magnific-popup.min.js'])
-			.pipe(concat("libs.min.js")) // собираем все библиотеки в один файл
-			// .pipe(uglify()) // сжимаем
-			.pipe(gulp.dest("src/js"));
+  del.sync("src/js/libs.min.js"); // удаляем старую сборку
+  return gulp.src([
+    // 'src/libs/jquery/dist/jquery.min.js',
+    'src/libs/bootstrap-sass/assets/javascripts/bootstrap.min.js'])
+  // 'src/libs/owl-carousel/owl-carousel/owl.carousel.min.js',
+  // 'src/libs/magnific-popup/dist/jquery.magnific-popup.min.js'])
+    .pipe(concat("libs.min.js")) // собираем все библиотеки в один файл
+    // .pipe(uglify()) // сжимаем
+    .pipe(gulp.dest("src/js"));
 });
 
 //concat and minification css libs

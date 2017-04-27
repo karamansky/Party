@@ -207,7 +207,7 @@ header {
     font-family: "Raleway-Regular", sans-serif;
     letter-spacing: 1px; }
 
-button.button {
+button.btn {
   width: 100%;
   padding: 17px 0 16px 0;
   background: #11c3dd;
@@ -217,7 +217,7 @@ button.button {
   letter-spacing: 1px;
   font-family: "Raleway-Bold", sans-serif;
   position: relative; }
-  button.button:hover {
+  button.btn:hover {
     color: #3d546f; }
 
 #venue {
@@ -265,9 +265,7 @@ label[for='venue'] {
   color: #86a9d1; }
 
 .file-upload p {
-  line-height: 36px;
-  font-family: "Raleway-Thin", sans-serif;
-  font-size: 14px; }
+  line-height: 36px; }
 
 .reviews-block {
   background: #fff;
