@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/libs.min.css">
 
+
+
+
+
   <title> Type title here </title>
 
 </head>
@@ -49,50 +53,68 @@
 
   <section class="content">
     <div class="head-block">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="caption">
-              <h2>
-                We plan, you party!
-              </h2>
-              <p class="descr">
-                <b>30+ years</b> of industry experience, working for you!
-              </p>
+      <div class="step">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="caption">
+                <h2>
+                  We plan, you party!
+                </h2>
+                <p class="descr">
+                  <b>30+ years</b> of industry experience, working for you!
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <form action="" method="get" enctype="multipart/form-data">
-          <div class="form-block">
-            <div class="row">
-              <div class="col-md-12">
-                  <input id="guest" type="text" name="guest" placeholder="guest of honor’s name" required>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <input id="name" type="text" name="name" placeholder="your name" required>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <input id="email" type="email" name="email" placeholder="email" required>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="file-upload">
-                  <label>
-                    <input id="zip" type="file" name="zip">
-                    <p>ZIP</p>
-                  </label>
+          <form id="partyform" action="page2.php" method="get" enctype="multipart/form-data">
+            <div class="form-block">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="inputwrap">
+                    <div class="error">Required field</div>
+                    <input id="guest" class="" type="text" name="guest" placeholder="guest of honor’s name" required>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="inputwrap">
+                    <div class="error">Required field</div>
+                    <input id="name" type="text" name="name" placeholder="your name" required>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="inputwrap">
+                    <div class="error">Email is not valid</div>
+                    <input id="email" type="email" name="email" placeholder="email" required>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="inputwrap">
+                    <div class="error">Only ZIP file</div>
+                    <div class="file-upload">
+                      <label>
+                        <input id="zip" type="file" name="zip">
+                        <b>ZIP</b>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="inputwrap">
+                    <div class="error">Required field</div>
+                    <input id="date" type="text" name="date" placeholder="event date" required>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <button type="submit" name="sbmt" class="button">build my party<i class="arrow-right"></i> </button>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-12">
-                <input id="date" type="text" name="date" placeholder="event date" required>
-              </div>
-              <div class="col-md-12">
-                <button type="submit" name="sbmt" class="btn">build my party <i class="arrow-right"></i> </button>
-              </div>
+              <p>Give us 5 minutes, and we’ll do the rest</p>
             </div>
-            <p>Give us 5 minutes, and we’ll do the rest</p>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
+
     </div>
 
     <div class="reviews-block">
@@ -141,9 +163,21 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+
 <!-- scripts -->
+<script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/libs.min.js"></script>
+
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+
+<script src="js/jquery.steps.js"></script>
+
 <script type="text/javascript" src="js/common.js"></script>
+
+
 
 </body>
 </html>

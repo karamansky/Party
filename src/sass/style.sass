@@ -135,7 +135,8 @@ header
 		font-family: $regular
 		letter-spacing: 1px
 
-button.button
+button.button,
+a.button
 	width: 100%
 	padding: 17px 0 16px 0
 	background: $button
@@ -147,6 +148,10 @@ button.button
 	position: relative
 	&:hover
 		color: $text
+
+a.button
+	display: block
+	text-align: center
 
 #venue
 	display: none
@@ -397,5 +402,7 @@ div.error
 	left: auto
 	right: 5px
 	top: 12px
+
+
 
 @import "media"

@@ -207,7 +207,8 @@ header {
     font-family: "Raleway-Regular", sans-serif;
     letter-spacing: 1px; }
 
-button.button {
+button.button,
+a.button {
   width: 100%;
   padding: 17px 0 16px 0;
   background: #11c3dd;
@@ -217,8 +218,13 @@ button.button {
   letter-spacing: 1px;
   font-family: "Raleway-Bold", sans-serif;
   position: relative; }
-  button.button:hover {
+  button.button:hover,
+  a.button:hover {
     color: #3d546f; }
+
+a.button {
+  display: block;
+  text-align: center; }
 
 #venue {
   display: none; }

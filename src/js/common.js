@@ -16,12 +16,14 @@ $(function(){
     return regex.test(email);
   }
 
-  //hide error msg
+  //hide error msg on focus
   $("input, select, textarea").focus(function(){
     $(this).removeClass("error");
     $(this).parent().find("div.error").hide();
   });
 
+
+  //validate blog form
   $("#comment-form button[type=submit]").click(function(){
     var eflag = false;
     //validate blog review form
@@ -38,15 +40,15 @@ $(function(){
                 "right": 'auto',
                 "top": '2px',
                 "z-index": '2'
-              });
+            });
       }
-
     });
 
     if(eflag){
       return false;
+    }else{
+      return true;
     }
-
   });
 
   function is_error(elem){
@@ -66,58 +68,49 @@ $(function(){
     return eflag;
   }
 
-  //check inputs
-  $("#partyform button[type=submit]").on("click", function(e){
+  //check valid on first step
+  $("a[href=#next]").click(function(e){
+    e.preventDefault();
+
+      var eflag = false;
+
+      //validate partyform
+      $(".first-step input, .first-step select").each(function(){
+        eflag = is_error($(this));
+      });
+
+    // check file size
+    if($("#zip").val() != ""){
+      if(findSize() > 30000000){
+        eflag = true;
+        $("#zip").css("border","1px solid #ff0000");
+      }
+      var parts = $("#zip").val().split('.');
+      var filesExt = ['zip']; // массив расширений
+      if(filesExt.join().search(parts[parts.length - 1]) == -1){
+        eflag = true;
+        $("#zip").css("border","1px solid #ff0000");
+      }
+    }
+
+    if(!eflag){
+      $("#steps section:first-child").hide();
+      $("#steps section:nth-child(2)").show();
+    }
+
+  });
+
+  //check valid on second step and send message
+  $(".second-step button[type=submit]").on("click", function(e){
     e.preventDefault();
     var form = $("form#partyform");
     var eflag = false;
 
     //validate partyform
-    $("#partyform input, #partyform select").each(function(){
+    $(".second-step input, .second-step select").each(function(){
       eflag = is_error($(this));
     });
 
-    // check resume textarea
-    if($("#howsend1").prop("checked")){
-      if($("#resume-text").val().length < 50 || $("#resume-text").val().length > 20000){
-        eflag = true;
-        $("#resume-text").css("border","1px solid #ff0000");
-        $("#resume-text + span").show();
-      }
-    }
-
-    // check url
-    if($("#howsend2").prop("checked")){
-      if(!isUrlValid($("#url").val())){
-        eflag = true;
-        $("#url").css("border","1px solid #ff0000");
-        $("#url + span").show();
-      }
-    }
-
-    // check file size
-    if(findSize() > 30000000){
-      eflag = true;
-      $("#file").css("border","1px solid #ff0000");
-      $(".error.filemaxsize").show();
-    }
-    var parts = $("#zip").val().split('.');
-    var filesExt = ['zip']; // массив расширений
-    if(filesExt.join().search(parts[parts.length - 1]) == -1){
-      eflag = true;
-      $("#zip").css("border","1px solid #ff0000");
-      $(".error.filetype").show();
-    }
-
-
-    //check captcha
-    // if(grecaptcha.getResponse() == ""){
-    //   eflag = true;
-    //   $("#g-recaptcha").css("border","1px solid #ff0000");
-    //   $(".error.captcha").show();
-    // }
-
-    //send email if no error
     if(!eflag){
 
       var form = $("#partyform")[0];
@@ -151,123 +144,6 @@ $(function(){
       // form.submit();
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // var form = $("#partyform").show();
-  //
-  // form.steps({
-  //   headerTag: "h3",
-  //   bodyTag: "fieldset",
-  //   transitionEffect: "slideLeft",
-  //   onStepChanging: function (event, currentIndex, newIndex)
-  //   {
-  //     // Allways allow previous action even if the current form is not valid!
-  //     if (currentIndex > newIndex)
-  //     {
-  //       return true;
-  //     }
-  //     // Needed in some cases if the user went back (clean up)
-  //     if (currentIndex < newIndex)
-  //     {
-  //       // To remove error styles
-  //       form.find(".body:eq(" + newIndex + ") label.error").remove();
-  //       form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
-  //     }
-  //     form.validate().settings.ignore = ":disabled,:hidden";
-  //     return form.valid();
-  //   },
-  //   onStepChanged: function (event, currentIndex, priorIndex)
-  //   {
-  //     // Used to skip the "Warning" step if the user is old enough.
-  //     if (currentIndex === 2 && Number($("#age-2").val()) >= 18)
-  //     {
-  //       form.steps("next");
-  //     }
-  //     // Used to skip the "Warning" step if the user is old enough and wants to the previous step.
-  //     if (currentIndex === 2 && priorIndex === 3)
-  //     {
-  //       form.steps("previous");
-  //     }
-  //   },
-  //   onFinishing: function (event, currentIndex)
-  //   {
-  //     form.validate().settings.ignore = ":disabled";
-  //     return form.valid();
-  //   },
-  //   onFinished: function (event, currentIndex)
-  //   {
-  //     alert("Submitted!");
-  //   }
-  // }).validate({
-  //   errorPlacement: function errorPlacement(error, element) { element.before(error); },
-  //   rules: {
-  //     confirm: {
-  //       equalTo: "#password-2"
-  //     }
-  //   }
-  // });
-
-
-
-
-
-
-
 
 
 });
