@@ -230,7 +230,8 @@ label[for='venue'] {
   color: #86a9d1;
   padding: 17px 5px 16px 5px;
   margin-bottom: 10px;
-  text-align: center; }
+  text-align: center;
+  font-family: "Raleway-Thin", sans-serif; }
 
 #venue:checked + label {
   background: #3d546f;
@@ -264,8 +265,8 @@ label[for='venue'] {
   cursor: pointer;
   color: #86a9d1; }
 
-.file-upload p {
-  line-height: 36px;
+.file-upload b {
+  line-height: 55px;
   font-family: "Raleway-Thin", sans-serif;
   font-size: 14px; }
 
@@ -338,8 +339,7 @@ label[for='venue'] {
   color: #3d546f;
   font-size: 18px;
   line-height: 18px;
-  letter-spacing: 1px;
-  padding-top: 5px; }
+  letter-spacing: 1px; }
 
 .social {
   text-transform: uppercase;
@@ -380,7 +380,9 @@ label[for='venue'] {
 
 .review-from {
   margin-left: -10px;
-  margin-right: -10px; }
+  margin-right: -10px;
+  overflow: hidden;
+  margin-bottom: 5px; }
   .review-from input, .review-from textarea {
     width: 100%;
     padding: 5px;
@@ -399,7 +401,7 @@ label[for='venue'] {
     .review-from input:-ms-input-placeholder, .review-from textarea:-ms-input-placeholder {
       color: #86a9d1; }
   .review-from textarea {
-    margin-top: 10px;
+    margin: 10px 0 5px 0;
     height: 80px;
     max-width: 100%; }
 
@@ -444,24 +446,62 @@ label[for='venue'] {
     font-family: "Raleway-Regular", sans-serif;
     color: #3d546f; }
 
+.inputwrap {
+  position: relative; }
+
+input.error,
+select.error {
+  border: 1px solid red !important; }
+
+div.error {
+  display: none;
+  font-size: 13px;
+  position: absolute;
+  left: 5px;
+  top: 0;
+  color: red;
+  font-family: "Raleway-Regular", sans-serif; }
+
+.review-from div.error {
+  left: auto;
+  right: 5px;
+  top: 12px; }
+
 @media screen and (max-width: 1024px) {
   .wrapper {
     max-width: 1024px; } }
 
 @media screen and (max-width: 992px) {
-  .contacts {
-    background: none; } }
+  .adv {
+    width: auto; }
+    .adv h2 {
+      font-size: 25px;
+      line-height: 30px; } }
 
 @media screen and (max-width: 768px) {
+  header .middle {
+    margin: 10px 0; }
   header .right p,
-  header .left p {
+  header .left p,
+  .review-from {
     margin-right: 0;
     margin-left: 0; }
+  .review-from {
+    margin-bottom: 20px; }
+    .review-from button {
+      margin-top: 15px; }
+    .review-from input, .review-from textarea {
+      margin-bottom: 15px; }
   .review {
     margin-bottom: 30px; }
     .review p {
       font-size: 18px;
-      line-height: 22px; } }
+      line-height: 22px; }
+  .main-box {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .adv {
+    display: none; } }
 
 @media screen and (max-width: 600px) {
   .form-block,
@@ -469,10 +509,13 @@ label[for='venue'] {
     width: 100%; }
   .caption h2 {
     line-height: 55px; }
-  .wrapper {
-    background-repeat: repeat-y; } }
+  .blog h2 {
+    font-size: 40px;
+    line-height: 42px; } }
 
 @media screen and (max-width: 380px) {
   .caption h2 {
     font-size: 40px;
-    line-height: 45px; } }
+    line-height: 45px; }
+  .social a {
+    margin-right: 5px; } }

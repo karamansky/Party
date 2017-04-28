@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/libs.min.css">
 
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+
   <title> Type title here </title>
 
 </head>
@@ -25,17 +27,17 @@
   <header>
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-3">
           <div class="left">
             <p>Mitzvah Genie</p>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
           <div class="middle">
             <a href="#">start now free!</a>
           </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-sm-5">
           <div class="right">
             <p>The easiest way to plan a mitzvah</p>
           </div>
@@ -47,7 +49,7 @@
   <section class="content">
     <div class="blog">
       <div class="row">
-        <div class="col-md-7 col-md-offset-1">
+        <div class="col-sm-7 col-sm-offset-1">
           <div class="main-box">
             <div class="article">
               <p class="date">april 17, 2017 | Tag1, Tag2, Tag3</p>
@@ -70,18 +72,30 @@
               </div>
             </div>
             <div class="review-from">
-              <form action="" method="post">
+              <form id="comment-form" action="" method="post">
                 <div class="col-sm-6">
-                  <input type="text" name="name" placeholder="name" required/>
+                  <div class="inputwrap">
+                    <div class="error">Required field</div>
+                    <input type="text" id="name" name="name" placeholder="name" required/>
+                  </div>
                 </div>
                 <div class="col-sm-6">
-                  <input type="email" name="email" placeholder="email" required/>
+                  <div class="inputwrap">
+                    <div class="error">Email is not valid</div>
+                    <input type="email" id="email" name="email" placeholder="email" required/>
+                  </div>
                 </div>
                 <div class="col-sm-12">
-                  <textarea name="thoughts" placeholder="your thoughts?" required></textarea>
+                  <div class="inputwrap">
+                    <div class="error">Required field</div>
+                    <textarea name="thoughts" id="thoughts" placeholder="your thoughts?" required></textarea>
+                  </div>
                 </div>
                 <div class="col-sm-6">
-                  <p>captcha paste here</p>
+                  <div class="inputwrap">
+                    <div class="error">Click on captcha</div>
+                    <div id="g-recaptcha" class="g-recaptcha" data-sitekey="6LduRxIUAAAAAKu8ZmA__HtJcmhh5L0xyG9zwFUZ" style="transform:scale(0.9);-webkit-transform:scale(0.9);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+                  </div>
                 </div>
                 <div class="col-sm-6">
                   <button type="submit" name="sbmt" class="button">SUBMIT<i class="arrow-right"></i> </button>
@@ -100,7 +114,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
           <aside class="adv">
             <div class="box">
               <h2>
@@ -138,9 +152,19 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+
 <!-- scripts -->
+<script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/libs.min.js"></script>
+
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+
 <script type="text/javascript" src="js/common.js"></script>
+
+
 
 </body>
 </html>

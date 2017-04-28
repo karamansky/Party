@@ -159,6 +159,7 @@ label[for='venue']
 	padding: 17px 5px 16px 5px
 	margin-bottom: 10px
 	text-align: center
+	font-family: $thin
 
 #venue:checked + label
 	background: $text
@@ -192,8 +193,8 @@ label[for='venue']
 	cursor: pointer
 	color: $border
 
-.file-upload p
-	line-height: 36px
+.file-upload b
+	line-height: 55px
 	font-family: $thin
 	font-size: 14px
 
@@ -269,7 +270,6 @@ label[for='venue']
 	font-size: 18px
 	line-height: 18px
 	letter-spacing: 1px
-	padding-top: 5px
 
 .social
 	text-transform: uppercase
@@ -308,6 +308,8 @@ label[for='venue']
 .review-from
 	margin-left: -10px
 	margin-right: -10px
+	overflow: hidden
+	margin-bottom: 5px
 
 	input, textarea
 		width: 100%
@@ -328,7 +330,7 @@ label[for='venue']
 			color: $border
 
 	textarea
-		margin-top: 10px
+		margin: 10px 0 5px 0
 		height: 80px
 		max-width: 100%
 
@@ -375,5 +377,25 @@ label[for='venue']
 		letter-spacing: 1px
 		font-family: $regular
 		color: $text
+
+
+.inputwrap
+	position: relative
+input.error,
+select.error
+	border: 1px solid red!important
+div.error
+	display: none
+	font-size: 13px
+	position: absolute
+	left: 5px
+	top: 0
+	color: red
+	font-family: $regular
+
+.review-from div.error
+	left: auto
+	right: 5px
+	top: 12px
 
 @import "media"

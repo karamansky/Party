@@ -56,16 +56,19 @@
             </div>
           </div>
         </div>
-        <form action="" method="get">
+        <form id="partyform" action="" method="get">
           <div class="form-block">
             <div class="row">
               <div class="col-md-12">
-                <select id="level" name="level" required>
-                  <option value="" hidden selected>entertainment level</option>
-                  <option value="">Minimal – music and announcements/hosting</option>
-                  <option value="">Moderate – Minimal + some guest interaction, games, giveaways</option>
-                  <option value="">Showtime! – Start the show! Heavy involvement and interaction with family and guests</option>
-                </select>
+                <div class="inputwrap">
+                  <div class="error">Required field</div>
+                  <select id="level" name="level" required class="">
+                    <option value="" hidden selected>entertainment level</option>
+                    <option value="Minimal">Minimal – music and announcements/hosting</option>
+                    <option value="Moderate">Moderate – Minimal + some guest interaction, games, giveaways</option>
+                    <option value="Showtime">Showtime! – Start the show! Heavy involvement and interaction with family and guests</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div class="row">
@@ -76,59 +79,80 @@
             </div>
             <div class="row">
               <div class="col-md-6">
-                <select id="photography" name="photography" required>
-                  <option value="" hidden selected>Photography</option>
-                  <option value="" >Photography Only</option>
-                  <option value="">Photography and Videography</option>
-                  <option value="">None</option>
-                </select>
+                <div class="inputwrap">
+                  <div class="error">Required field</div>
+                  <select id="photography" name="photography" required>
+                    <option value="" hidden selected>Photography</option>
+                    <option value="Photography Only" >Photography Only</option>
+                    <option value="Photography and Videography">Photography and Videography</option>
+                    <option value="None">None</option>
+                  </select>
+                </div>
               </div>
               <div class="col-md-6">
-                <select id="catering" name="catering" required>
-                  <option value="" hidden selected >catering</option>
-                  <option value="">Required</option>
-                  <option value="">Not Required</option>
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <input id="guests" type="text" name="guests" placeholder="number of guests" required>
-              </div>
-              <div class="col-md-6">
-                <select id="decor" name="decor" required>
-                  <option value="" hidden selected>decor</option>
-                  <option value="">None Required</option>
-                  <option value="">Moderate</option>
-                  <option value="">Strong</option>
-                  <option value="">Spectacular</option>
-                </select>
+                <div class="inputwrap">
+                  <div class="error">Required field</div>
+                  <select id="catering" name="catering" required>
+                    <option value="" hidden selected >catering</option>
+                    <option value="Required">Required</option>
+                    <option value="Not Required">Not Required</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <select id="montage" name="montage" required>
-                  <option value="" hidden selected>montage</option>
-                  <option value="">Required</option>
-                  <option value="">Not Required</option>
-                </select>
+                <div class="inputwrap">
+                  <div class="error">Required field</div>
+                  <input id="guests" class="" type="text" name="guests" placeholder="number of guests" required>
+                </div>
               </div>
               <div class="col-md-6">
-                <select id="transportation" name="transportation" required>
-                  <option value="" hidden selected>transportation</option>
-                  <option value="">Required</option>
-                  <option value="">Not Required</option>
-                </select>
+                <div class="inputwrap">
+                  <div class="error">Required field</div>
+                  <select id="decor" name="decor" required>
+                    <option value="" hidden selected>decor</option>
+                    <option value="None Required">None Required</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Strong">Strong</option>
+                    <option value="Spectacular">Spectacular</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="inputwrap">
+                  <div class="error">Required field</div>
+                  <select id="montage" name="montage" required>
+                    <option value="" hidden selected>montage</option>
+                    <option value="Required">Required</option>
+                    <option value="Not Required">Not Required</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="inputwrap">
+                  <div class="error">Required field</div>
+                  <select id="transportation" name="transportation" required>
+                    <option value="" hidden selected>transportation</option>
+                    <option value="Required">Required</option>
+                    <option value="Not Required">Not Required</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
-                <select id="religious" name="religious" required>
-                  <option value="" hidden selected>religious observance</option>
-                  <option value="">None</option>
-                  <option value="">Moderate</option>
-                  <option value="">Strict</option>
-                </select>
+                <div class="inputwrap">
+                  <div class="error">Required field</div>
+                  <select id="religious" name="religious" required>
+                    <option value="" hidden selected>religious observance</option>
+                    <option value="None">None</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Strict">Strict</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div class="row">
@@ -160,9 +184,19 @@
 
 <link rel="stylesheet" href="css/style.css">
 
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+
 <!-- scripts -->
+<script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/libs.min.js"></script>
+
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+
 <script type="text/javascript" src="js/common.js"></script>
+
+
 
 </body>
 </html>
